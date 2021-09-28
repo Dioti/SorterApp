@@ -1,4 +1,4 @@
-# SorterFactory
+# SorterApp
 
 An command line application that sorts an array of randomly generated integers.
 
