@@ -20,10 +20,10 @@ public class SorterMain {
         // do the sorting
         long start, stop;
         start = System.nanoTime();
-        int[] sorted = s.sort(arr);
+        s.sort(arr);
         stop = System.nanoTime();
-        printIntArray(sorted);
-        System.out.println(sorterType.toUpperCase() + " took " + (stop - start) + " nanoseconds");
+        printIntArray(arr);
+        System.out.println(s.getClass().getSimpleName() + " took " + (stop - start) + " nanoseconds");
     }
 
     private static int[] generateRandomIntArray(int min, int max, int len) {

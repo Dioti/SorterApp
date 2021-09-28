@@ -1,6 +1,11 @@
 public class BubbleSorter extends Sorter {
+
     @Override
-    int[] sort(int[] arr) {
+    void sort(int[] arr) {
+        bubbleSort(arr);
+    }
+
+    private void bubbleSort(int[] arr) {
         boolean swapsMade = true;
         while(swapsMade) {
             swapsMade = false;
@@ -13,6 +18,5 @@ public class BubbleSorter extends Sorter {
                 }
             }
         }
-        return arr;
     }
 }
