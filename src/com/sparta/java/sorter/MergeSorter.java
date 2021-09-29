@@ -1,6 +1,8 @@
-public class MergeSorter extends Sorter {
-    @Override
-    void sort(int[] a) {
+package com.sparta.java.sorter;
+
+public class MergeSorter implements Sorter {
+
+    public void sort(int[] a) {
         mergeSort(a, a.length);
     }
 

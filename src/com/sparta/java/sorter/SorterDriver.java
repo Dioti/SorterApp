@@ -1,19 +1,26 @@
+package com.sparta.java.sorter;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class SorterMain {
+public class SorterDriver {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         // generate random array
         System.out.print("Generating random int array... how many elements do you want?\n> ");
-        int len = in.nextInt();
+        int len = in.nextInt(); // TODO: check for int[0] and null arrays
         int[] arr = generateRandomIntArray(0, len, len); // TODO: allow user to specify range
         printIntArray(arr);
 
         // create sorter using factory
-        System.out.print("\nDo you want to use a BubbleSorter or MergeSorter?\n> ");
+        System.out.println("\nWhat sorter do you want to use?");
+        System.out.println("1.\tBubbleSorter");
+        System.out.println("2.\tMergeSorter");
+        System.out.println("3.\tQuickSorter");
+        System.out.print("> ");
         String sorterType = in.next();
+        System.out.println();
         SorterFactory sf = new SorterFactory();
         Sorter s = sf.getSorter(sorterType);
 
