@@ -2,6 +2,12 @@ package com.sparta.java.sorter;
 
 public class BubbleSorter implements Sorter {
 
+    @Override
+    public String getType() {
+        return "Bubble Sort";
+    }
+
+    @Override
     public void sort(int[] a) {
         bubbleSort(a);
     }

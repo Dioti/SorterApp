@@ -5,12 +5,14 @@ public class SorterFactory {
         if(sorterType == null) {
             return null;
         }
-        return switch (sorterType.toUpperCase()) {
-            case "1", "BUBBLESORTER" -> new BubbleSorter();
-            case "2", "MERGESORTER" -> new MergeSorter();
-            case "3", "QUICKSORTER" -> new QuickSorter();
-            default -> null;
-        };
-        // TODO: exception handling for returning null com.sparta.java.sorter.Sorter
+        switch (sorterType.toUpperCase()) {
+            case "1", "BUBBLESORTER": return new BubbleSorter();
+            case "2", "MERGESORTER": return new MergeSorter();
+            case "3", "QUICKSORTER": return new QuickSorter();
+            default:
+                System.err.println(this.getClass().getSimpleName() + " received an invalid sortType \"" + sorterType + "\"");
+                System.exit(0);
+        }
+        return null;
     }
 }

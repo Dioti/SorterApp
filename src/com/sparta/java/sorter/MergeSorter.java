@@ -2,6 +2,12 @@ package com.sparta.java.sorter;
 
 public class MergeSorter implements Sorter {
 
+    @Override
+    public String getType() {
+        return "Merge Sort";
+    }
+
+    @Override
     public void sort(int[] a) {
         mergeSort(a, a.length);
     }

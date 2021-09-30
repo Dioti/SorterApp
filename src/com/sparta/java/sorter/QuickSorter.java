@@ -2,6 +2,12 @@ package com.sparta.java.sorter;
 
 public class QuickSorter implements Sorter {
 
+    @Override
+    public String getType() {
+        return "Quick Sort";
+    }
+
+    @Override
     public void sort(int[] a) {
         quickSort(a, 0, a.length - 1); // use last element in array as pivot
     }
