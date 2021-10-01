@@ -1,9 +1,16 @@
 package com.sparta.java.sorter;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SorterView {
+
+    // stores a static reference to Logger - avoids multiple instances
+    private static Logger logger = Logger.getLogger("My Application Logger");
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -62,6 +69,10 @@ public class SorterView {
         // print sorted array
         System.out.println("Sorted array: ");
         controller.printArray();
-        System.out.println("[" + controller.getSortType().toUpperCase() + "] Time taken: " + (stop - start) + " nanoseconds");
+        String timeTaken = (controller.getSortType() + " : " + (stop - start) + " nanoseconds");
+
+        // by default, uses root of the project
+        PropertyConfigurator.configure("log4j.properties");
+        logger.info(timeTaken);
     }
 }
