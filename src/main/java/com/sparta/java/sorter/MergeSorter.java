@@ -8,11 +8,12 @@ public class MergeSorter implements Sorter {
     }
 
     @Override
-    public void sort(int[] a) {
+    public int[] sort(int[] a) {
         mergeSort(a, a.length);
+        return a;
     }
 
-    public void mergeSort(int[] a, int n) {
+    private void mergeSort(int[] a, int n) {
         if (a.length < 2) { // sorting is complete when array is broken down into individual elements
             return;
         }
@@ -37,7 +38,7 @@ public class MergeSorter implements Sorter {
         merge(a, l, r, mid, n - mid);
     }
 
-    public void merge(int[] a, int[] l, int[] r, int left, int right) {
+    private void merge(int[] a, int[] l, int[] r, int left, int right) {
         int i = 0, j = 0, k = 0;
 
         // go through each element from left and right arrays

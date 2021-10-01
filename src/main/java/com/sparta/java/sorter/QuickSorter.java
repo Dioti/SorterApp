@@ -8,8 +8,9 @@ public class QuickSorter implements Sorter {
     }
 
     @Override
-    public void sort(int[] a) {
+    public int[] sort(int[] a) {
         quickSort(a, 0, a.length - 1); // use last element in array as pivot
+        return a;
     }
 
     private void quickSort(int[] a, int start, int end) {

@@ -8,8 +8,9 @@ public class BubbleSorter implements Sorter {
     }
 
     @Override
-    public void sort(int[] a) {
+    public int[] sort(int[] a) {
         bubbleSort(a);
+        return a;
     }
 
     private void bubbleSort(int[] a) {
