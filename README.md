@@ -2,6 +2,8 @@
 
 An application that sorts an array of randomly generated integers. Contains both a CLI and a GUI.
 
+![sorterapp_thumb](https://user-images.githubusercontent.com/11021728/135925326-50de863b-4d4e-41c7-8089-197c026c624d.PNG)
+
 ---
 
 ### Sorting Algorithms
