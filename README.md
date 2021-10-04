@@ -9,6 +9,7 @@ The following sorting algorithms are currently implemented:
 - Bubble sort
 - Merge sort
 - Quick sort
+- Binary tree sort
 
 ---
 
