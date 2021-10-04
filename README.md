@@ -10,7 +10,7 @@ An application that sorts an array of randomly generated integers. Contains both
 
 The GUI allows the user to enter their own array instead of generating one randomly. The array must contain ints only and each element must be separated with either a space or a comma.
 
-The following arrays are considered valid formats:
+Valid formats:
 > `9 8 7 6 5 4 3 2 1`
 > 
 > `9,8,7,6,5,4,3,2,1`
