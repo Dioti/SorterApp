@@ -8,7 +8,7 @@ class BinaryTreeSorterTest {
 
     @Test
     void getType() {
-        assertEquals("Binary Tree (In Order)", new BinaryTreeSorter().getType());
+        assertEquals("Binary Tree Sort", new BinaryTreeSorter().getType());
     }
 
     @Test

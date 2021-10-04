@@ -8,9 +8,14 @@ public class SorterController {
     private Sorter model;
     private int[] arr;
 
+    public SorterController(String type, int[] arr) {
+        factory = new SorterFactory();
+        model = factory.getSorter(type);
+        this.arr = arr;
+    }
+
     public SorterController(String type, int len) {
         arr = generateRandomIntArray(0, len, len, System.currentTimeMillis());
-        arr = generateRandomIntArray(0, len, len, 123456789);
         factory = new SorterFactory();
         model = factory.getSorter(type);
     }

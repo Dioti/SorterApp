@@ -6,7 +6,7 @@ import org.apache.log4j.PropertyConfigurator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SorterApp {
+public class SorterCLI {
 
     // stores a static reference to Logger - avoids multiple instances
     private static Logger logger = Logger.getLogger("My Application Logger");

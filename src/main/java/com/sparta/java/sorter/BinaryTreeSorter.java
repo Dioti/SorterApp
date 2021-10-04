@@ -4,7 +4,7 @@ public class BinaryTreeSorter implements Sorter {
 
     @Override
     public String getType() {
-        return "Binary Tree (In Order)";
+        return "Binary Tree Sort";
     }
 
     @Override
