@@ -1,6 +1,6 @@
 # SorterApp
 
-A command line application that sorts an array of randomly generated integers.
+An application that sorts an array of randomly generated integers. Contains both a CLI and a GUI.
 
 ---
 
