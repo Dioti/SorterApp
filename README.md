@@ -6,6 +6,19 @@ An application that sorts an array of randomly generated integers. Contains both
 
 ---
 
+### User Interface
+
+The GUI allows the user to enter their own array instead of generating one randomly. The array must contain ints only and each element must be separated with either a space or a comma.
+
+The following arrays are considered valid formats:
+> `9 8 7 6 5 4 3 2 1`
+> 
+> `9,8,7,6,5,4,3,2,1`
+> 
+> `9, 8, 7, 6, 5, 4, 3, 2, 1`
+
+---
+
 ### Sorting Algorithms
 The following sorting algorithms are currently implemented:
 - Bubble sort
