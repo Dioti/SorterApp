@@ -9,6 +9,25 @@ import static org.junit.jupiter.api.Assertions.*;
 class SorterControllerTest {
 
     @Test
+    void givenTypeAndLength_CreateController() {
+        String type = "Bubble Sort";
+        int length = 42;
+        SorterController sc = new SorterController(type, length);
+        assertEquals("Bubble Sort", sc.getSortType());
+        assertEquals(42, sc.getArray().length);
+    }
+
+    @Test
+    void givenTypeLengthAndSeed_CreateController() {
+        String type = "Bubble Sort";
+        int length = 42;
+        long seed = 123456789;
+        SorterController sc = new SorterController(type, length, seed);
+        assertEquals("Bubble Sort", sc.getSortType());
+        assertEquals(42, sc.getArray().length);
+    }
+
+    @Test
     void getArray() {
         SorterController sc = new SorterController("BubbleSorter", 0);
         int[] a = new int[0];
@@ -34,6 +53,12 @@ class SorterControllerTest {
     }
 
     @Test
+    void getBinaryTreeSortType() {
+        SorterController sc = new SorterController("BinaryTreeSorter", 1);
+        assertEquals("Binary Tree Sort", sc.getSortType());
+    }
+
+    @Test
     void sortBubble() {
         SorterController sc = new SorterController("BubbleSorter", 10);
         int[] result = sc.getArray();
@@ -56,6 +81,16 @@ class SorterControllerTest {
     @Test
     void sortQuick() {
         SorterController sc = new SorterController("QuickSorter", 10);
+        int[] result = sc.getArray();
+        int[] expected = result;
+        sc.sort();
+        Arrays.sort(expected);
+        assertArrayEquals(expected, result);
+    }
+
+    @Test
+    void sortBinaryTree() {
+        SorterController sc = new SorterController("BinaryTree", 10);
         int[] result = sc.getArray();
         int[] expected = result;
         sc.sort();

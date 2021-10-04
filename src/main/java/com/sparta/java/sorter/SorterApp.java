@@ -6,7 +6,7 @@ import org.apache.log4j.PropertyConfigurator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SorterView {
+public class SorterApp {
 
     // stores a static reference to Logger - avoids multiple instances
     private static Logger logger = Logger.getLogger("My Application Logger");
@@ -22,15 +22,17 @@ public class SorterView {
             System.out.print("> ");
             try {
                 length = in.nextInt();
-                if(length > -1) {
+                if(length > -1 && length <= Integer.MAX_VALUE) {
                     running = false;
                 } else {
                     System.out.println("\nInvalid array size, please enter a positive integer.");
                 }
-            } catch (InputMismatchException ime) {
-                System.err.println("Input not an int!");
+            } catch (InputMismatchException e) {
+                System.err.println("Input is invalid! Must be a positive int, less than or equal to " + Integer.MAX_VALUE + ".");
+                System.exit(1);
             } catch (Exception e) {
                 e.printStackTrace();
+                System.exit(1);
             }
         }
 
@@ -42,24 +44,27 @@ public class SorterView {
             System.out.println("1.\tBubbleSorter");
             System.out.println("2.\tMergeSorter");
             System.out.println("3.\tQuickSorter");
+            System.out.println("4.\tBinaryTreeSorter");
             System.out.print("> ");
             try {
                 sorterType = in.next();
                 switch (sorterType.toUpperCase()) {
-                    case "1", "BUBBLESORTER", "2", "MERGESORTER", "3", "QUICKSORTER" -> running = false;
+                    case "1", "BUBBLESORTER", "2", "MERGESORTER", "3", "QUICKSORTER", "4", "BINARYTREESORTER" -> running = false;
                     default -> System.out.println("\n" + sorterType + " is not a recognised sort algorithm, please try again.");
                 }
-            } catch (InputMismatchException ime) {
+            } catch (InputMismatchException e) {
                 System.err.println("Input not a string!"); // will probably never happen
+                System.exit(1);
             } catch (Exception e) {
                 e.printStackTrace();
+                System.exit(1);
             }
         }
 
         // print original array
         SorterController controller = new SorterController(sorterType, length);
         System.out.println("\nOriginal array:");
-        controller.printArray();
+        printArray(controller.getArray());
 
         // do the sort
         long start = System.nanoTime();
@@ -68,11 +73,22 @@ public class SorterView {
 
         // print sorted array
         System.out.println("Sorted array: ");
-        controller.printArray();
+        printArray(controller.getArray());
         String timeTaken = (controller.getSortType() + " : " + (stop - start) + " nanoseconds");
 
         // by default, uses root of the project
         PropertyConfigurator.configure("log4j.properties");
         logger.info(timeTaken);
+    }
+
+    public static void printArray(int[] arr) {
+        String str = "";
+        for (int i = 0; i < arr.length; i++) {
+            str += arr[i];
+            if(i < arr.length - 1) { // no space after last element
+                str += " ";
+            }
+        }
+        System.out.println(str);
     }
 }

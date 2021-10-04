@@ -1,6 +1,5 @@
 package com.sparta.java.sorter;
 
-import java.util.Date;
 import java.util.Random;
 
 public class SorterController {
@@ -11,6 +10,7 @@ public class SorterController {
 
     public SorterController(String type, int len) {
         arr = generateRandomIntArray(0, len, len, System.currentTimeMillis());
+        arr = generateRandomIntArray(0, len, len, 123456789);
         factory = new SorterFactory();
         model = factory.getSorter(type);
     }
@@ -30,18 +30,15 @@ public class SorterController {
     }
 
     public void sort() {
-        model.sort(arr);
+        arr = model.sort(arr);
     }
 
-    public void printArray() {
-        String str = "";
-        for (int i = 0; i < arr.length; i++) {
-            str += arr[i];
-            if(i < arr.length - 1) { // no space after last element
-                str += " ";
-            }
-        }
-        System.out.println(str);
+    public void sort(int[] arr) {
+        this.arr = model.sort(arr);
+    }
+
+    public int[] getSorted(int[] arr) {
+        return model.sort(arr);
     }
 
     // TODO: allow user to specify range

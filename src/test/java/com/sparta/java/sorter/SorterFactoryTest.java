@@ -21,9 +21,9 @@ class SorterFactoryTest {
         SorterFactory sf = new SorterFactory();
         Sorter s1 = sf.getSorter("MergeSorter");
         Sorter s2 = sf.getSorter("2");
-        MergeSorter bs = new MergeSorter();
-        assertEquals(bs.getClass(), s1.getClass());
-        assertEquals(bs.getClass(), s2.getClass());
+        MergeSorter ms = new MergeSorter();
+        assertEquals(ms.getClass(), s1.getClass());
+        assertEquals(ms.getClass(), s2.getClass());
     }
 
     @Test
@@ -31,8 +31,18 @@ class SorterFactoryTest {
         SorterFactory sf = new SorterFactory();
         Sorter s1 = sf.getSorter("QuickSorter");
         Sorter s2 = sf.getSorter("3");
-        QuickSorter bs = new QuickSorter();
-        assertEquals(bs.getClass(), s1.getClass());
-        assertEquals(bs.getClass(), s2.getClass());
+        QuickSorter qs = new QuickSorter();
+        assertEquals(qs.getClass(), s1.getClass());
+        assertEquals(qs.getClass(), s2.getClass());
+    }
+
+    @Test
+    void getBinaryTreeSorter() {
+        SorterFactory sf = new SorterFactory();
+        Sorter s1 = sf.getSorter("BinaryTreeSorter");
+        Sorter s2 = sf.getSorter("4");
+        BinaryTreeSorter bts = new BinaryTreeSorter();
+        assertEquals(bts.getClass(), s1.getClass());
+        assertEquals(bts.getClass(), s2.getClass());
     }
 }

@@ -23,7 +23,7 @@ public class QuickSorter implements Sorter {
 
     private int partition(int[] a, int start, int end) {
         int p_ind = end; // use last element in array as pivot
-        // TODO: add other ways of choosing a pivot
+        // TODO: create other ways of choosing a pivot
 
         for(int i = start; i < end; i++) { // for each element in the current partition
             if (a[i] < a[p_ind]) { // if element value < pivot value
