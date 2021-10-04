@@ -24,3 +24,14 @@ The following sorting algorithms are currently implemented:
 	- The sort algorithm to be used
 	- The sorted array after the algorithm has been executed
 	- The time taken
+
+
+---
+
+### To-Do
+
+- [ ] Allow user to specify range when generating a random array
+- [ ] Implement alternative methods for choosing a pivot during quick sort
+- [ ] Detect non-numeric, non-comma characters in the GUI array input field and disable Sort button if there are
+- [ ] Implement more sort algorithms (insertion, selection, Collections.sort(), Arrays.sort(), Arrays.p barallelSort())
+- [ ] Add an option for the user to use all or a combination of search approaches to allow a performance comparison of sort methods to be made
