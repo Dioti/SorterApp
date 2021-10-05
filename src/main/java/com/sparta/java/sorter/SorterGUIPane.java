@@ -246,14 +246,14 @@ public class SorterGUIPane extends JPanel {
     }
 
     public String arrayToString(int[] arr) {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-            str += arr[i];
+            str.append(arr[i]);
             if(i < arr.length - 1) { // no space after last element
-                str += " ";
+                str.append(" ");
             }
         }
-        return str;
+        return str.toString();
     }
 
     class ArrayGenListener implements ActionListener {
@@ -261,15 +261,10 @@ public class SorterGUIPane extends JPanel {
         public void actionPerformed(ActionEvent e) {
             String str = e.getActionCommand();
             logger.debug("The option \"" + str + "\" was selected");
-            switch(str) {
-                case "Enter an array":
-                    randArr = false;
-                    break;
-                case "Use a random array":
-                    randArr = true;
-                    break;
-                default:
-                    logger.error(str + " is not a valid option for array generation");
+            switch (str) {
+                case "Enter an array" -> randArr = false;
+                case "Use a random array" -> randArr = true;
+                default -> logger.error(str + " is not a valid option for array generation");
             }
             arrTextField.setVisible(!randArr);
             arrSizeLabel.setVisible(randArr);
@@ -286,7 +281,7 @@ public class SorterGUIPane extends JPanel {
                 selectedSorters[index] = 1;
             } else { // checkbox has been deselected
                 selectedSorters[index] = 0;
-            };
+            }
         }
         private int getIndex(String str, String[] arr) {
             for(int i = 0; i < arr.length; i++) {
