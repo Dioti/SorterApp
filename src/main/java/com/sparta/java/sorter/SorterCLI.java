@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SorterCLI {
 
     // stores a static reference to Logger - avoids multiple instances
-    private static Logger logger = Logger.getLogger("My Application Logger");
+    private static Logger logger = Logger.getLogger("SorterApp Logger");
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -45,11 +45,17 @@ public class SorterCLI {
             System.out.println("2.\tMergeSorter");
             System.out.println("3.\tQuickSorter");
             System.out.println("4.\tBinaryTreeSorter");
+            System.out.println("5.\tInsertionSorter");
+            System.out.println("6.\tSelectionSorter");
+            System.out.println("7.\tCollectionsSorter");
+            System.out.println("8.\tArraysSorter");
+            System.out.println("9.\tParallelSorter");
             System.out.print("> ");
             try {
                 sorterType = in.next();
                 switch (sorterType.toUpperCase()) {
-                    case "1", "BUBBLESORTER", "2", "MERGESORTER", "3", "QUICKSORTER", "4", "BINARYTREESORTER" -> running = false;
+                    case "1", "BUBBLESORTER", "2", "MERGESORTER", "3", "QUICKSORTER", "4", "BINARYTREESORTER", "5", "INSERTIONSORTER",
+                            "6", "SELECTIONSORTER", "7", "COLLECTIONSSORTER", "8", "ARRAYSSORTER", "9", "PARALLELSORTER" -> running = false;
                     default -> System.out.println("\n" + sorterType + " is not a recognised sort algorithm, please try again.");
                 }
             } catch (InputMismatchException e) {
