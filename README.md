@@ -1,6 +1,6 @@
 # SorterApp
 
-A GUI application that sorts an array of randomly generated integers.
+A GUI application that sorts an array of integers. The user can specify the array or can generate one randomly given a size. The user can also choose which sort algorithms to use and compare the time taken for each method.
 
 ![image](https://user-images.githubusercontent.com/11021728/135949573-32a6880b-ce5d-40c1-a1c8-679348b961ea.png)
 
