@@ -2,7 +2,7 @@
 
 A program that sorts an array of randomly generated integers. Contains both a command-line interface and a GUI application.
 
-![sorterapp_thumb](https://user-images.githubusercontent.com/11021728/135925326-50de863b-4d4e-41c7-8089-197c026c624d.PNG)
+![image](https://user-images.githubusercontent.com/11021728/135949573-32a6880b-ce5d-40c1-a1c8-679348b961ea.png)
 
 ---
 
@@ -25,6 +25,11 @@ The following sorting algorithms are currently implemented:
 - Merge sort
 - Quick sort
 - Binary tree sort
+- Insertion sort
+- Selection sort
+- java.util.Collections.sort()
+- java.util.Arrays.sort()
+- java.util.Arrays.parallelSort()
 
 ---
 
@@ -38,7 +43,6 @@ The following sorting algorithms are currently implemented:
 	- The sorted array after the algorithm has been executed
 	- The time taken
 
-
 ---
 
 ### To-Do
@@ -46,5 +50,5 @@ The following sorting algorithms are currently implemented:
 - [ ] Allow user to specify range when generating a random array
 - [ ] Implement alternative methods for choosing a pivot during quick sort
 - [ ] Detect non-numeric, non-comma characters in the GUI array input field and disable Sort button if there are
-- [ ] Implement more sort algorithms (insertion, selection, Collections.sort(), Arrays.sort(), Arrays.p barallelSort())
-- [ ] Add an option for the user to use all or a combination of search approaches to allow a performance comparison of sort methods to be made
+- [x] Implement more sort algorithms (insertion, selection, Collections.sort(), Arrays.sort(), Arrays.parallelSort())
+- [x] Add an option for the user to use all or a combination of search approaches to allow a performance comparison of sort methods to be made
